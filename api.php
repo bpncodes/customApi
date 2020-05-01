@@ -13,7 +13,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM housedetails";
+$sql = "SELECT * FROM tale";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
