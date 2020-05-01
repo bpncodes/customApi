@@ -4,9 +4,6 @@ $username = 'bipin';
 $servername = 'localhost';
 $password = 'Bipin@123';
 $dbname = 'amazing_information';
-INSERT INTO table_name
-(serial, data, age, distance, stores, latitude, longitude, price)
-VALUES
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
 
