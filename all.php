@@ -13,7 +13,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 // sql to create table
-$sql = "CREATE TABLE table_name(
+$sql = "CREATE TABLE housedetails(
     serial DOUBLE,
     data DOUBLE,
     age DOUBLE,
