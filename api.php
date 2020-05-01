@@ -5,21 +5,27 @@ $servername = 'localhost';
 $password = 'Bipin@123';
 $dbname = 'amazing_information';
 
-$con = new mysqli($servername, $username, $password, $dbname);
 
-if($con->connect_error){
-    die('Connection Failed',$con->connect_error)
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = 'SELECT * FROM Countries';
-$result = $con -> query($sql);
+$sql = "SELECT * FROM Countries";
+$result = $conn->query($sql);
 
-$data = array();
-while($row = mysqli_fetch_assoc($result))
-{
-    $data[] = $row;
+if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+        $data[] = $row;
+    }
+} else {
+    echo "0 results";
 }
 
 echo json_encode($data);
+
+$conn->close();
 
 ?>
